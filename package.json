@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
   "devDependencies": {
     "@types/node": "^14.14.22",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
@@ -20,7 +23,8 @@
   "type": "module",
   "scripts": {
     "reset": "cli-confirm \"This will reset the git repository. Continue? [y/n]\" && rm -rf .git",
-    "start": "nodemon src/app.ts",
-    "build": "tsc -p ."
+    "debug": "nodemon --exec \"node --no-warnings --loader ts-node/esm\" --inspect src/app.ts",
+    "build": "tsc",
+    "start": "tsc && node build/app.js"
   }
 }
