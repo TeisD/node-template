@@ -1,10 +1,11 @@
 {
     "env": {
+        "browser": true,
         "es2021": true,
         "node": true
     },
     "extends": [
-        "google"
+        "airbnb-base"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -15,8 +16,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-    },
-    "ignorePatterns": [
-        "build"
-    ]
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"]
+    }
 }
